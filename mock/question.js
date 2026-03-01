@@ -1,50 +1,51 @@
 const Mock = require('mockjs');
-const getQuestionList=require('./data/getQuestionList');
+const getQuestionList = require('./data/getQuestionList');
 
 const Random = Mock.Random;
 
-module.exports=[
+module.exports = [
     {
         //获取单个问卷信息
-        url:'/api/question/:id',
-        method:'get',
-        response(){
+        url: '/api/question/:id',
+        method: 'get',
+        response() {
             return {
-                errno:0,
-                data:{
-                    id:Random.id(),
-                    title:Random.ctitle()
+                errno: 0,
+                data: {
+                    id: Random.id(),
+                    title: Random.ctitle()
                 }
             }
         }
     },
     {
         //创建问卷
-        url:'/api/question',
-        method:'post',
-        response(){
+        url: '/api/question',
+        method: 'post',
+        response() {
             return {
-                errno:0,
-                data:{
-                    id:Random.id()
+                errno: 0,
+                data: {
+                    id: Random.id()
                 }
             }
         }
     },
     {
         //获取（查询）问卷列表
-        url:'/api/question',
-        method:'get',
-        response(ctx){
-            const {url=''}=ctx;
-            const isDeleted=url.indexOf('isDeleted=true')>=0;
-            const isStar=url.indexOf('isStar=true')>=0;
+        url: '/api/question',
+        method: 'get',
+        response(ctx) {
+            const { url = '', query = {} } = ctx;
+            const isDeleted = url.indexOf('isDeleted=true') >= 0;
+            const isStar = url.indexOf('isStar=true') >= 0;
+            const pageSize = parseInt(query.pageSize)||10;
 
             return {
-                errno:0,
-                data:{
-                    list:getQuestionList({len:10,isDeleted,isStar}),      //当前页
-                    total:100     //总数，分页
+                errno: 0,
+                data: {
+                    list: getQuestionList({ len: pageSize, isDeleted, isStar }),      //当前页
+                    total: 100     //总数，分页
                 }
             }
         }
