@@ -11,26 +11,19 @@ module.exports = [
             const { headers } = ctx;
             const authorization = headers['authorization'] || headers['Authorization'];
             
-            //1.检查Authorization是否存在
-            if (!authorization) {
+
+            //1.检查是否符合基本的验证格式
+            if(!authorization.startsWith('Bearer ')){
                 return {
                     errno: 401,
                     msg: '未登录'
                 }
             }
-
-            //2.检查authorization格式是否正确
-            if(!authorization.startsWith('Bearer ')){
-                return {
-                    errno: 401,
-                    msg: 'token格式错误'
-                }
-            }
             
-            //3.提取token
+            //2.提取token
             const token=authorization.split(' ')[1];
 
-            //4.校验token是否有效（这里简单判断token是否为空）
+            //3.校验token是否有效（这里简单判断token是否为空）
             if(!token){
                 return {
                     errno: 401,
