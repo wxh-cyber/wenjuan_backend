@@ -17,30 +17,36 @@ module.exports = [
                     //组件列表
                     componentList:[
                         {   //Title
-                            id:Random.id(),
+                            fe_id:Random.id(),
                             type:'questionTitle',      //组件类型，不能重复，前后端统一
                             title:'title',
+                            isHidden:false,
+                            isLocked:false,
                             props:{
-                                text:'个人信息调研',
+                                title:'个人信息调研',
                                 level:1,
                                 isCenter:false
                             }
                         },
                         {   //Input
-                            id:Random.id(),
+                            fe_id:Random.id(),
                             type:'questionInput',
                             title:'输入框',
+                            isHidden:false,
+                            isLocked:false,
                             props:{
-                                name:'你的姓名',
+                                title:'你的姓名',
                                 placeholder:'请输入姓名...'
                             }
                         },
                         {
-                            id:Random.id(),
+                            fe_id:Random.id(),
                             type:'questionInput',
                             title:'输入框',
+                            isHidden:false,
+                            isLocked:false,
                             props:{
-                                name:'你的手机号',
+                                title:'你的手机号',
                                 placeholder:'请输入手机号...'
                             }
                         }
