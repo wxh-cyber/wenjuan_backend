@@ -16,15 +16,25 @@ module.exports = [
                     title: Random.ctitle(),
                     //组件列表
                     componentList:[
-                        {   //Title
+                        {   //Info
                             fe_id:Random.id(),
-                            type:'questionTitle',      //组件类型，不能重复，前后端统一
-                            title:'title',
+                            type:'QuestionInfo',
+                            title:'问卷信息',
                             isHidden:false,
                             isLocked:false,
                             props:{
-                                title:'个人信息调研',
-                                level:1,
+                                title:'问卷标题',
+                                desc:'问卷描述...'
+                            }
+                        },
+                        {   //Paragraph
+                            fe_id:Random.id(),
+                            type:'QuestionParagraph',
+                            title:'段落',
+                            isHidden:false,
+                            isLocked:false,
+                            props:{
+                                text:'一行段落',
                                 isCenter:false
                             }
                         },
@@ -49,7 +59,18 @@ module.exports = [
                                 title:'你的手机号',
                                 placeholder:'请输入手机号...'
                             }
-                        }
+                        },
+                        {   //Textarea
+                            fe_id:Random.id(),
+                            type:'QuestionTextarea',
+                            title:'多行输入',
+                            isHidden:false,
+                            isLocked:false,
+                            props:{
+                                title:'你的爱好',
+                                placeholder:'请输入你的爱好...'
+                            }
+                        },
                     ]
                 }
             }
