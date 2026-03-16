@@ -9,7 +9,7 @@ const Random = Mock.Random;
 function getComponentList(){
     return [
         {   //Info
-            fe_id: Random.id(),
+            fe_id: 'c1',         //注意：由于统计页，左侧和中间需要的数据完全一致，所以要写死fe_id，不能采用Random.id()
             type: 'QuestionInfo',
             title: '问卷信息',
             isHidden: false,
@@ -20,7 +20,7 @@ function getComponentList(){
             }
         },
         {   //Paragraph
-            fe_id: Random.id(),
+            fe_id: 'c2',
             type: 'QuestionParagraph',
             title: '段落',
             isHidden: false,
@@ -31,8 +31,8 @@ function getComponentList(){
             }
         },
         {   //Input
-            fe_id: Random.id(),
-            type: 'questionInput',
+            fe_id: 'c3',
+            type: 'QuestionInput',
             title: '输入框',
             isHidden: false,
             isLocked: false,
@@ -42,8 +42,8 @@ function getComponentList(){
             }
         },
         {
-            fe_id: Random.id(),
-            type: 'questionInput',
+            fe_id: 'c4',
+            type: 'QuestionInput',
             title: '输入框',
             isHidden: false,
             isLocked: false,
@@ -53,7 +53,7 @@ function getComponentList(){
             }
         },
         {   //Textarea
-            fe_id: Random.id(),
+            fe_id: 'c5',
             type: 'QuestionTextarea',
             title: '多行输入',
             isHidden: false,
@@ -64,7 +64,7 @@ function getComponentList(){
             }
         },
         {   //Radio
-            fe_id: Random.id(),
+            fe_id: 'c6',
             type: 'QuestionRadio',
             title: '单选',
             isHidden: false,
@@ -81,7 +81,7 @@ function getComponentList(){
             }
         },
         {   //Checkbox
-            fe_id: Random.id(),
+            fe_id: 'c7',
             type: 'QuestionCheckbox',
             title: '多选',
             isHidden: false,
