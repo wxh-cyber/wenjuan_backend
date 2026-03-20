@@ -37,6 +37,7 @@ module.exports = [
                 statListCache.set(cacheKey, getStatList(DEFAULT_TOTAL));
             }
 
+            //根据每次发起请求的分页相关数据，从缓存中获取数据
             const allList = statListCache.get(cacheKey) || [];
             const total = allList.length;
             const start = (page - 1) * pageSize;
@@ -48,6 +49,23 @@ module.exports = [
                 data:{
                     total,
                     list
+                }
+            }
+        }
+    },
+    //获取单个组件的统计数据汇总
+    {
+        url:'/api/stat/:questionId/:componentId',
+        method:'get',
+        response(){
+            return {
+                errno:0,
+                data:{
+                    stat:[
+                        {name:'选项1',count:20},
+                        {name:'选项2',count:10},
+                        {name:'选项3',count:5}
+                    ]
                 }
             }
         }

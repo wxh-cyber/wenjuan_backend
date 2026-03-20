@@ -18,6 +18,8 @@ module.exports = [
                     desc:'问卷描述',
                     js:'',
                     css:'',
+                    isDeleted: false,
+                    isStar: false,
                     isPublished: true,
                     //组件列表
                     componentList: getComponentList()

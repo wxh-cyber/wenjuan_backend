@@ -19,19 +19,31 @@ function getComponentList(){
                 desc: '问卷描述...'
             }
         },
+        {   //Title
+            fe_id:'c2',
+            type:'QuestionTitle',
+            title:'标题',
+            isHidden:false,
+            isLocked:false,
+            props:{
+                text:'个人信息调研',
+                level:1,
+                isCenter:false
+            }
+        },
         {   //Paragraph
-            fe_id: 'c2',
+            fe_id: 'c3',
             type: 'QuestionParagraph',
             title: '段落',
             isHidden: false,
             isLocked: false,
             props: {
-                text: '一行段落',
+                text: '一行段落1\n一行段落2',
                 isCenter: false
             }
         },
         {   //Input
-            fe_id: 'c3',
+            fe_id: 'c4',
             type: 'QuestionInput',
             title: '输入框',
             isHidden: false,
@@ -42,7 +54,7 @@ function getComponentList(){
             }
         },
         {
-            fe_id: 'c4',
+            fe_id: 'c5',
             type: 'QuestionInput',
             title: '输入框',
             isHidden: false,
@@ -53,7 +65,7 @@ function getComponentList(){
             }
         },
         {   //Textarea
-            fe_id: 'c5',
+            fe_id: 'c6',
             type: 'QuestionTextarea',
             title: '多行输入',
             isHidden: false,
@@ -64,7 +76,7 @@ function getComponentList(){
             }
         },
         {   //Radio
-            fe_id: 'c6',
+            fe_id: 'c7',
             type: 'QuestionRadio',
             title: '单选',
             isHidden: false,
@@ -81,7 +93,7 @@ function getComponentList(){
             }
         },
         {   //Checkbox
-            fe_id: 'c7',
+            fe_id: 'c8',
             type: 'QuestionCheckbox',
             title: '多选',
             isHidden: false,
